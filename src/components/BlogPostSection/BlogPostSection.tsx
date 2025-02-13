@@ -9,7 +9,7 @@ const BlogPostSection = () => {
       id: 1,
       title: "The Future of Web Development in 2024",
       excerpt: "Explore the latest trends and technologies shaping the future of web development.",
-      image: "/images/blog/web-dev-2024.jpg",
+      image: "/images/graphic.jpg",
       date: "March 15, 2024",
       category: "Web Development"
     },
@@ -17,7 +17,7 @@ const BlogPostSection = () => {
       id: 2,
       title: "Maximizing User Experience Through Design",
       excerpt: "Learn key principles and strategies to create engaging user experiences.",
-      image: "/images/blog/ux-design.jpg", 
+      image: "/images/webdev.jpg",  
       date: "March 12, 2024",
       category: "UX Design"
     },
@@ -25,7 +25,7 @@ const BlogPostSection = () => {
       id: 3,
       title: "Digital Marketing Strategies That Work",
       excerpt: "Discover effective digital marketing approaches for business growth.",
-      image: "/images/blog/digital-marketing.jpg",
+      image: "/images/videoeditting.jpg",
       date: "March 10, 2024",
       category: "Digital Marketing"
     }

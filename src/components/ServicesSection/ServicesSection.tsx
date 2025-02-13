@@ -6,37 +6,37 @@ const ServicesSection = () => {
   const services = [
     {
       id: 1,
-      icon: "/icons/web-design.svg",
+      icon: "/images/webdev.jpg",
       title: "Web Design",
       description: "Creative and responsive web designs that captivate your audience and deliver exceptional user experiences across all devices."
     },
     {
       id: 2,
-      icon: "/icons/development.svg",
+      icon: "/images/webdev.jpg",
       title: "Full Stack Development",
       description: "End-to-end web development solutions using cutting-edge technologies to build scalable and robust applications."
     },
     {
       id: 3,
-      icon: "/icons/graphic-design.svg",
+      icon: "/images/graphic.jpg",
       title: "Graphic Design",
       description: "Eye-catching visual designs including logos, branding materials, and marketing collateral that tell your brand's story."
     },
     {
       id: 4,
-      icon: "/icons/video-editing.svg",
+      icon: "/images/videoeditting.jpg",
       title: "Video Editing",
       description: "Professional video editing services to create engaging content for your marketing, social media, and promotional needs."
     },
     {
       id: 5,
-      icon: "/icons/seo.svg",
+      icon: "/images/webdev.jpg",
       title: "SEO Optimization",
       description: "Strategic SEO services to improve your website's visibility and drive organic traffic to your business."
     },
     {
       id: 6,
-      icon: "/icons/digital-marketing.svg",
+      icon: "/images/graphic.jpg",
       title: "Digital Marketing",
       description: "Comprehensive digital marketing strategies to grow your online presence and reach your target audience."
     }
@@ -95,12 +95,12 @@ const ServicesSection = () => {
               className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 mb-6 relative">
+                <div className="w-16 h-16 mb-6 relative rounded-full overflow-hidden">
                   <Image
                     src={service.icon}
                     alt={service.title}
                     fill
-                    className="object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">

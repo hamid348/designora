@@ -50,7 +50,7 @@ const AboutUsSection = () => {
         >
           <motion.div variants={itemVariants} className="relative h-[400px] rounded-xl overflow-hidden">
             <Image
-              src="/images/about-us.jpg"
+              src="/images/webdev.jpg"
               alt="About Designora360"
               fill
               className="object-cover"

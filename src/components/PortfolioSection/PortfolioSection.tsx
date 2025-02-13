@@ -7,45 +7,45 @@ const PortfolioSection = () => {
   const portfolioItems = [
     {
       id: 1,
-      title: "E-Commerce Website",
+      title: "Web Development Projects",
       category: "Web Development",
-      image: "/images/portfolio/project1.jpg",
-      description: "Modern e-commerce platform with seamless user experience"
+      image: "/images/webdev.jpg",
+      description: "Full-stack web applications with modern technologies"
     },
     {
       id: 2, 
-      title: "Mobile App Design",
-      category: "UI/UX Design",
-      image: "/images/portfolio/project2.jpg",
-      description: "Intuitive mobile application interface design"
+      title: "Video Production",
+      category: "Video Editing",
+      image: "/images/videoeditting.jpg",
+      description: "Professional video editing and production"
     },
     {
       id: 3,
-      title: "Brand Identity",
-      category: "Branding",
-      image: "/images/portfolio/project3.jpg", 
-      description: "Complete brand identity design system"
+      title: "Graphic Design Portfolio",
+      category: "Design",
+      image: "/images/graphic.jpg",
+      description: "Creative graphic design solutions for brands"
     },
     {
       id: 4,
-      title: "Corporate Website",
+      title: "Frontend Development",
       category: "Web Development",
-      image: "/images/portfolio/project4.jpg",
-      description: "Professional corporate web presence"
+      image: "/images/webdev.jpg",
+      description: "Responsive and interactive web interfaces"
     },
     {
       id: 5,
-      title: "Social Media Campaign",
-      category: "Digital Marketing",
-      image: "/images/portfolio/project5.jpg",
-      description: "Engaging social media marketing campaign"
+      title: "Content Creation",
+      category: "Video & Graphics",
+      image: "/images/videoeditting.jpg",
+      description: "Engaging multimedia content creation"
     },
     {
       id: 6,
-      title: "Product Design",
-      category: "UI/UX Design",
-      image: "/images/portfolio/project6.jpg",
-      description: "User-centered product design solution"
+      title: "Brand Identity",
+      category: "Graphic Design",
+      image: "/images/graphic.jpg",
+      description: "Complete brand identity design systems"
     }
   ];
 
@@ -106,6 +106,8 @@ const PortfolioSection = () => {
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={item.id <= 3}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

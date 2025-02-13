@@ -38,11 +38,11 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="mb-6">
               <Image
-                src="/images/designora1-02.png"
+                src="/images/designora1-02.png"      
                 alt="Designora360 Logo"
                 width={180}
                 height={45}
-                className="brightness-0 invert"
+                className="w-auto h-auto"
               />
             </div>
             <p className="text-gray-400">
