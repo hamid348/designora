@@ -1,113 +1,116 @@
-'use client';
-import { motion } from 'framer-motion';
+'use client'
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaBehance } from 'react-icons/fa';
 import Image from 'next/image';
 
 const Footer = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    company: [
+      { name: 'About', href: '/about' },
+      { name: 'Services', href: '/services' },
+      { name: 'Portfolio', href: '/portfolio' },
+      { name: 'Career', href: '/career' }
+    ],
+    help: [
+      { name: 'Customer Support', href: '/support' },
+      { name: 'Contact Us', href: '/contact' },
+      { name: 'Terms & Conditions', href: '/terms' },
+      { name: 'Privacy Policy', href: '/privacy' }
+    ]
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 }
-    }
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Add your newsletter subscription logic here
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
-          {/* Company Info */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <div className="mb-6">
-              <Image
-                src="/images/designora1-02.png"      
+    <footer className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
+          {/* Logo and Description */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+            <Link href="/" className="inline-block">
+              <Image 
+                src="/images/designora1-02.png"
                 alt="Designora360 Logo"
-                width={180}
-                height={45}
-                className="w-auto h-auto"
+                width={160}
+                height={40}
+                className="w-auto h-10"
+                priority
               />
-            </div>
-            <p className="text-gray-400">
-              Transforming visions into digital masterpieces. Your one-stop destination for innovative design solutions and digital excellence.
+            </Link>
+            <p className="mt-6 text-base text-gray-600">
+              Transforming ideas into digital excellence. Your trusted partner for innovative design solutions and creative digital experiences.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Services */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">Our Services</h3>
-            <ul className="space-y-2">
-              <li><Link href="/services/web-design" className="text-gray-400 hover:text-blue-400 transition-colors">Web Design</Link></li>
-              <li><Link href="/services/graphic-design" className="text-gray-400 hover:text-blue-400 transition-colors">Graphic Design</Link></li>
-              <li><Link href="/services/branding" className="text-gray-400 hover:text-blue-400 transition-colors">Branding</Link></li>
-              <li><Link href="/services/digital-marketing" className="text-gray-400 hover:text-blue-400 transition-colors">Digital Marketing</Link></li>
-              <li><Link href="/services/ui-ux" className="text-gray-400 hover:text-blue-400 transition-colors">UI/UX Design</Link></li>
+          {/* Company Links */}
+          <div>
+            <h3 className="text-sm font-semibold tracking-widest text-gray-900 uppercase">Company</h3>
+            <ul className="mt-6 space-y-4">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-base text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Contact Info */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <div className="text-gray-400 space-y-2">
-              <p>Lahore, Pakistan</p>
-              <p>Phone: +92 321 3420224</p>
-              <p>Email: info@designora360.com</p>
-              <p>Working Hours: Mon - Fri, 9AM - 6PM</p>
-            </div>
-          </motion.div>
+          {/* Help Links */}
+          <div>
+            <h3 className="text-sm font-semibold tracking-widest text-gray-900 uppercase">Help</h3>
+            <ul className="mt-6 space-y-4">
+              {footerLinks.help.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-base text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Social Links */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com/designora360" target="_blank" rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaFacebook size={24} />
-              </a>
-              <a href="https://twitter.com/designora360" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaTwitter size={24} />
-              </a>
-              <a href="https://instagram.com/designora360" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaInstagram size={24} />
-              </a>
-              <a href="https://linkedin.com/company/designora360" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaLinkedin size={24} />
-              </a>
-              <a href="https://behance.net/designora360" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaBehance size={24} />
-              </a>
-            </div>
-          </motion.div>
-        </motion.div>
+          {/* Newsletter */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+            <h3 className="text-sm font-semibold tracking-widest text-gray-900 uppercase">
+              Stay Updated
+            </h3>
+            <form onSubmit={handleSubscribe} className="mt-6">
+              <div className="flex flex-col space-y-4">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 text-gray-900 placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
 
-        {/* Bottom Bar */}
-        <motion.div
-          variants={itemVariants}
-          className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
-        >
-          <p>&copy; {new Date().getFullYear()} Designora360. All rights reserved.</p>
-        </motion.div>
+        <hr className="mt-16 mb-10 border-gray-200" />
+        
+        <p className="text-sm text-center text-gray-600">
+          © {currentYear} Designora360. All rights reserved.
+        </p>
       </div>
     </footer>
   );
